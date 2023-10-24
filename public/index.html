@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
     <style>
       body {
@@ -50,7 +51,7 @@
       </div>
       <br>
       <div>
-        <h2><strong>Ryan</strong> Plett</h2>
+        <h2><strong>Patty</strong> Aucoin</h2>
       </div>
     </header>
         
@@ -66,10 +67,34 @@
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
-      <div class="tweet-error"></div>
-      <div id="tweets-container"></div>
-    </section>
+      <!-- Tweet Content Here -->
+      <div id="tweets-container">
 
+        <article class="tweet">
+          <div class="tweetHeader">
+            <div style="align-items: center;" >
+                <i class="fa-solid fa-robot"></i>
+                <p>&nbsp&nbsp Mr. Roboto</p>
+            </div>  
+              <p>@notOzzy</p>
+          </div>
+          <form class="tweetText">
+            <p>I am iron man</p>
+          </form>
+
+          <footer class="tweetFooter">
+            <p id="dateText">10 days ago</p>
+                <div id="tweetIcon">
+                  <i class="fa-solid fa-flag">&nbsp&nbsp</i>
+                  <i class="fa-solid fa-retweet">&nbsp&nbsp</i>
+                  <i class="fa-solid fa-heart">&nbsp&nbsp</i>      
+                </div>
+          </footer>
+        
+        
+        </article>
+      </div>
+    </section>
   </main>
 </body>
 </html>

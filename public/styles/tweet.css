@@ -1,0 +1,45 @@
+.tweet {
+  background-color: #f4f1ec;
+  background-image: none;
+  border-style: solid;
+  margin-top: 0.5em;
+}
+
+.tweetHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: none;
+  align-items: center;
+  height: 50px;
+  margin-top: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.tweetText {
+  border-bottom-style: solid;
+  border-width: thick;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.tweetFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#dateText {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: medium;
+}
+
+#tweetIcon {
+  font-size: small;
+}
+
