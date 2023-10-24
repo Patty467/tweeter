@@ -1,0 +1,46 @@
+html {
+  box-sizing: border-box;
+}
+
+section div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+main button {
+  background-color: #4056A1;
+  border: none;
+  font-family: 'Bungee';
+  color: white;
+  margin-top: 0.5em;
+}
+
+main button:active {
+  background-color: #2E3A6F;
+}
+
+form textarea {
+  width: 100%;
+  resize: none;
+  border-style: none;
+  border-bottom-style: solid;
+  background-color: #f4f1ec;
+  border-width: thick;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.counter {
+  display: flex;
+  justify-content: flex-end;
+  font-family: 'Bungee';
+  float: right;
+}
+
+.counterRed {
+  display: flex;
+  justify-content: flex-end;
+  font-family: 'Bungee';
+  float: right;
+  color: red;
+}

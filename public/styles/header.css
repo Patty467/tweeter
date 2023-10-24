@@ -1,0 +1,17 @@
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 500px;
+  width: 100%;
+  margin-bottom: 25px;
+  background: #89CFF0;
+  background-color: #c5c5c563;
+  background-image: url("http://www.transparenttextures.com/patterns/black-paper.png");
+}
+
+header div h2 {
+  margin-top: 0px;
+  color: #FFFFFF;
+}

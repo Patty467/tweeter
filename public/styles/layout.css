@@ -14,6 +14,14 @@ html {
  * Global layout stuff
  */
 
+ main {
+  align-items: center;
+  text-align: justify;
+  margin-left: 2em;
+  margin-right: 2em;
+  background-color: #f4f1ec;
+}
+
 body {
   color: #545149;
   background-color: #f4f1ec;
