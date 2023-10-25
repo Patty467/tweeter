@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+  //Hide the error message
+  $('.tweetError').hide();
+
   //On button submit
   const onsubmit = function(event) {
     event.preventDefault();
@@ -9,16 +12,14 @@ $(document).ready(function() {
   const data = form.serialize();
   let dataLength = (textArea.val().length)
   let errormsg = "";
-  let errorDiv = $('.tweet-error')
-  //Logic
+  let errorDiv = $('.tweetError')
+  //Error Logic
   if (data !== "text=" && dataLength <= 140) {  
   $.ajax({ url: '/tweets', method: 'POST', data: data })
   .then( ()=> {
-    loadTweets();
-  })
-
+    loadTweets();})
   } else if (dataLength >= 141) {
-    errormsg = "You have too many characters."
+    errormsg = "Too many characters. Limit is 140"
   } else if (dataLength === 0) {
     errormsg = "Please input a Tweet."
   }
