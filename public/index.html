@@ -4,30 +4,31 @@
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
-    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+
+  <!--Google Fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
   
+  <!-- Add Custom Object-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
-
-    <style>
-      body {
-        font-family: 'Source Sans 3', sans-serif;
-      }
-    </style>
     
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -35,7 +36,6 @@
 
   </head>
   <body>
-
     <!-- Top nav bar (fixed) -->
     <nav>
       <span id="title">tweeter</span>
@@ -67,34 +67,9 @@
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
-      <!-- Tweet Content Here -->
-      <div id="tweets-container">
-
-        <article class="tweet">
-          <div class="tweetHeader">
-            <div style="align-items: center;" >
-                <i class="fa-solid fa-robot"></i>
-                <p>&nbsp&nbsp Mr. Roboto</p>
-            </div>  
-              <p>@notOzzy</p>
-          </div>
-          <form class="tweetText">
-            <p>I am iron man</p>
-          </form>
-
-          <footer class="tweetFooter">
-            <p id="dateText">10 days ago</p>
-                <div>
-                  <i id="tweetIcon" class="fa-solid fa-flag">&nbsp&nbsp</i>
-                  <i id="tweetIcon" class="fa-solid fa-retweet">&nbsp&nbsp</i>
-                  <i id="tweetIcon" class="fa-solid fa-heart">&nbsp&nbsp</i>      
-                </div>
-          </footer>
-        
-        
-        </article>
-      </div>
+      <div id="tweets-container"></div>
     </section>
   </main>
+
 </body>
 </html>
