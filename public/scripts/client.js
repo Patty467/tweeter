@@ -6,34 +6,35 @@ $(document).ready(function() {
   //On button submit
   const onsubmit = function(event) {
     event.preventDefault();
-  //Variables
-  const form = $(this);
-  const textArea = $(form).find("textarea");
-  const data = form.serialize();
-  let dataLength = (textArea.val().length);
-  let errorMsg = "";
-  let errorDiv = $('.tweetError');
-  //Error Logic
-  if (data !== "text=" && dataLength <= 140) {  
-  $.ajax({ url: '/tweets', method: 'POST', data: data })
-  .then( ()=> {
-    loadTweets();})
-  } else if (dataLength >= 141) {
-    errorMsg = "Too many characters. Limit is 140";
-  } else if (dataLength === 0) {
-    errorMsg = "Please input a Tweet.";
-  }
+    //Variables
+    const form = $(this);
+    const textArea = $(form).find("textarea");
+    const data = form.serialize();
+    let dataLength = (textArea.val().length);
+    let errorMsg = "";
+    let errorDiv = $('.tweetError');
+    //Error Logic
+    if (data !== "text=" && dataLength <= 140) {
+      $.ajax({ url: '/tweets', method: 'POST', data: data })
+        .then(()=> {
+          loadTweets();
+        });
+    } else if (dataLength >= 141) {
+      errorMsg = "Too many characters. Limit is 140";
+    } else if (dataLength === 0) {
+      errorMsg = "Please input a Tweet.";
+    }
 
-  if (errorMsg) {
-    errorDiv.text(errorMsg);
-    errorDiv.slideDown();
-  } else {
-    errorDiv.hide();
-  }
+    if (errorMsg) {
+      errorDiv.text(errorMsg);
+      errorDiv.slideDown();
+    } else {
+      errorDiv.hide();
+    }
   };
 
   //Escape the content of the tweet
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -48,15 +49,15 @@ $(document).ready(function() {
         renderTweets(res);
       }
     }
-    )
+    );
   };
   
   //Loop through each tweet so it can be loaded to the server
   const renderTweets = function(tweets) {
     $('#tweets-container').empty();
     for (let tweet of tweets) {
-     let renderTweet = createTweetElement(tweet);
-     $('#tweets-container').prepend(renderTweet);
+      let renderTweet = createTweetElement(tweet);
+      $('#tweets-container').prepend(renderTweet);
     }
   };
 
@@ -64,8 +65,8 @@ $(document).ready(function() {
   $('#tweeter-form').on('submit', onsubmit);
 
   //Format for the new tweet
-  const createTweetElement = function (tweet) {
-    const newTweet = 
+  const createTweetElement = function(tweet) {
+    const newTweet =
     `
     <article class="tweet">
       <div class="tweetHeader">
@@ -87,10 +88,10 @@ $(document).ready(function() {
           </div>
       </footer>
     </article>
-    `
-  return $(newTweet);
-}
+    `;
+    return $(newTweet);
+  };
 
-loadTweets();
+  loadTweets();
 }
 );
