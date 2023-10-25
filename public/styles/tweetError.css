@@ -1,9 +1,11 @@
 .tweetError {
-  width: 100%;
+  box-sizing:content-box;
   border-style:solid;
+  height: 50px;
   border-color: red;
+  color: red;
   flex-direction: row;
-  padding: 2em;
-  font-weight: 600;
+  font-weight: 800;
   justify-content: center;
+  align-items: center;
 }
