@@ -7,30 +7,30 @@ $(document).ready(function() {
   const onsubmit = function(event) {
     event.preventDefault();
   //Variables
-  const form = $(this)
-  const textArea = $(form).find("textarea")
+  const form = $(this);
+  const textArea = $(form).find("textarea");
   const data = form.serialize();
-  let dataLength = (textArea.val().length)
-  let errormsg = "";
-  let errorDiv = $('.tweetError')
+  let dataLength = (textArea.val().length);
+  let errorMsg = "";
+  let errorDiv = $('.tweetError');
   //Error Logic
   if (data !== "text=" && dataLength <= 140) {  
   $.ajax({ url: '/tweets', method: 'POST', data: data })
   .then( ()=> {
     loadTweets();})
   } else if (dataLength >= 141) {
-    errormsg = "Too many characters. Limit is 140"
+    errorMsg = "Too many characters. Limit is 140";
   } else if (dataLength === 0) {
-    errormsg = "Please input a Tweet."
+    errorMsg = "Please input a Tweet.";
   }
 
-  if (errormsg) {
-    errorDiv.text(errormsg)
-    errorDiv.slideDown()
+  if (errorMsg) {
+    errorDiv.text(errorMsg);
+    errorDiv.slideDown();
   } else {
-    errorDiv.hide()
+    errorDiv.hide();
   }
-}
+  };
 
   //Escape the content of the tweet
   const escape = function (str) {
@@ -49,19 +49,19 @@ $(document).ready(function() {
       }
     }
     )
-  }
+  };
   
   //Loop through each tweet so it can be loaded to the server
   const renderTweets = function(tweets) {
-    $('#tweets-container').empty()
+    $('#tweets-container').empty();
     for (let tweet of tweets) {
-     let renderTweet = createTweetElement(tweet) 
-     $('#tweets-container').prepend(renderTweet)
+     let renderTweet = createTweetElement(tweet);
+     $('#tweets-container').prepend(renderTweet);
     }
   };
 
   //add an event listener for the form
-  $('#tweeter-form').on('submit', onsubmit)
+  $('#tweeter-form').on('submit', onsubmit);
 
   //Format for the new tweet
   const createTweetElement = function (tweet) {
@@ -88,9 +88,9 @@ $(document).ready(function() {
       </footer>
     </article>
     `
-      return $(newTweet)
+  return $(newTweet);
 }
 
 loadTweets();
 }
-)
+);

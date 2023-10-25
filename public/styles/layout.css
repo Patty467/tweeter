@@ -38,6 +38,14 @@ div#tweets-container {
   background: none;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+ /* Breakpoint for desktop */
+@media only screen and (min-width: 1024px) {
+
+  body {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin-top: 5em;
+  }
+}

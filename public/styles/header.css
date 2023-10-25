@@ -15,3 +15,14 @@ header div h2 {
   margin-top: 0px;
   color: #FFFFFF;
 }
+
+ /* Breakpoint for desktop */
+ @media only screen and (min-width: 1024px) {
+
+  header {
+    max-width: 40%;
+    margin-bottom: 100px;
+    margin-top: 40px;
+    height: 450px;
+  }
+}
