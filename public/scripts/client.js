@@ -30,21 +30,21 @@ $(document).ready(function() {
     `
     <article class="tweet">
       <div class="tweetHeader">
-        <div style="align-items: center;" >
+        <div>
           <i "${tweet.user.avatars}"></i>
           <p>&nbsp&nbsp ${tweet.user.name}</p>
         </div>  
         <p>${tweet.user.handle}</p>
       </div>
-      <form class="tweetText">
+      <section class="tweetText">
         <p>${escape(tweet.content.text)}</p>
-      </form>
+      </section>
       <footer class="tweetFooter">
-        <p id="dateText">${timeago.format(tweet.created_at)}</p>
+        <p class="dateText">${timeago.format(tweet.created_at)}</p>
           <div>
-            <i id="tweetIcon" class="fa-solid fa-flag">&nbsp&nbsp</i>
-            <i id="tweetIcon" class="fa-solid fa-retweet">&nbsp&nbsp</i>
-            <i id="tweetIcon" class="fa-solid fa-heart">&nbsp&nbsp</i>      
+            <i class="tweetIcon fa-solid fa-flag">&nbsp&nbsp</i>
+            <i class="tweetIcon fa-solid fa-retweet">&nbsp&nbsp</i>
+            <i class="tweetIcon fa-solid fa-heart">&nbsp&nbsp</i>      
           </div>
       </footer>
     </article>
