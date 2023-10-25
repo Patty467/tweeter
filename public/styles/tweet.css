@@ -53,3 +53,6 @@
   color: rgb(180, 151, 19);
 }
 
+.tweetAvatarName {
+  align-items: center;
+}

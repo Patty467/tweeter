@@ -30,8 +30,8 @@ $(document).ready(function() {
     `
     <article class="tweet">
       <div class="tweetHeader">
-        <div>
-          <i "${tweet.user.avatars}"></i>
+        <div class="tweetAvatarName">
+          <img src="${tweet.user.avatars}" width="40" height="40"></i>
           <p>&nbsp&nbsp ${tweet.user.name}</p>
         </div>  
         <p>${tweet.user.handle}</p>
