@@ -1,11 +1,44 @@
 $(document).ready(function() {
 
+  //On button submit
+  const onsubmit = function(event) {
+    event.preventDefault();
+  //Variables
+  const form = $(this)
+  const textArea = $(form).find("textarea")
+  const data = form.serialize();
+  let dataLength = (textArea.val().length)
+  let errormsg = "";
+  let errorDiv = $('.tweet-error')
+  //Logic
+  if (data !== "text=" && dataLength <= 140) {  
+  $.ajax({ url: '/tweets', method: 'POST', data: data })
+  .then( ()=> {
+    loadTweets();
+  })
+
+  } else if (dataLength >= 141) {
+    errormsg = "You have too many characters."
+  } else if (dataLength === 0) {
+    errormsg = "Please input a Tweet."
+  }
+
+  if (errormsg) {
+    errorDiv.text(errormsg)
+    errorDiv.show()
+  } else {
+    errorDiv.hide()
+  }
+}
+
+  //Escape the string
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
+  //Get tweets from the server
   const loadTweets = function() {
     $.ajax({
       url: '/tweets',
@@ -17,6 +50,7 @@ $(document).ready(function() {
     )
   }
   
+  //Loop through each tweet so it can be loaded to the server
   const renderTweets = function(tweets) {
     $('#tweets-container').empty()
     for (let tweet of tweets) {
@@ -25,6 +59,10 @@ $(document).ready(function() {
     }
   };
 
+  //add an event listener for the form
+  $('#tweeter-form').on('submit', onsubmit)
+
+  //Format for the new tweet
   const createTweetElement = function (tweet) {
     const newTweet = 
     `
