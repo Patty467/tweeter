@@ -18,6 +18,8 @@ $(document).ready(function() {
       $.ajax({ url: '/tweets', method: 'POST', data: data })
         .then(()=> {
           loadTweets();
+          textArea.val(""); //Reset text area
+          $(form).find('.counter').text('140'); // Reset character counter
         });
     } else if (dataLength >= 141) {
       errorMsg = "Too many characters. Limit is 140";
